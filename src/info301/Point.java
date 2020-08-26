@@ -16,6 +16,14 @@ public class Point {
         this.x = x;
     }
 
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
     /**
      * Affichage des coordonnées du point dans un repère cartésien
      * @return

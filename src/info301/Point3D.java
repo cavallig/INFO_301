@@ -9,4 +9,10 @@ public class Point3D extends Point {
         this.z = z ;
     }
 
+    @Override
+    public String toString() {
+
+        return "(" + this.getX() + "," + this.getY() + "," +  this.z + ")" ;
+
+    }
 }

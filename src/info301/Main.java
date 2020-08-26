@@ -1,5 +1,9 @@
 package info301;
 
+/**
+ * Projet créé sous controle de version
+ * _ Mise à jour du repo github distant
+ */
 public class Main {
 
     public static void main(String[] args) {
