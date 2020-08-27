@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 	 System.out.println("Hello IDERA") ;
-	 Point p1 = new Point(10, 20) ;
+	 Point2D p1 = new Point2D(10, 20) ;
 
 	 System.out.println(p1);
 

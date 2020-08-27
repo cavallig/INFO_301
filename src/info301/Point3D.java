@@ -1,6 +1,6 @@
 package info301;
 
-public class Point3D extends Point {
+public class Point3D extends Point2D {
 
     private int z ;
 
