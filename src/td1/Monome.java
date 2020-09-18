@@ -45,5 +45,6 @@ public class Monome {
 
     static public void main(String args[]){
         System.out.print(new Monome(3,2)) ;
+
     }
 }
