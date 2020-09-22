@@ -6,7 +6,7 @@ public class Polynome {
     private ArrayList<Monome> poly;
 
     public Polynome() {
-        this.poly = new ArrayList<>();
+        this.poly = new ArrayList<Monome>();
     }
 
     public void ajouterMonome(Monome m) {

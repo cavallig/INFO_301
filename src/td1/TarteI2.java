@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class TarteI2 {
     private Pate p ;
-    private ArrayList<Ingredient> ingrdients ;
+    //private ArrayList<Ingredient> ingrdients ;
 
 
 }

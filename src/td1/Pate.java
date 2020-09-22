@@ -26,6 +26,8 @@ public class Pate {
     @Override
     public String toString() {
         String str = "" ;
+
+        /**
         switch (this.type){
             case: Pate.FEUILLETE
                     str = "Feuilletée" ;
@@ -37,6 +39,8 @@ public class Pate {
                     str = "Sablee" ;
                     break;
         }
+         **/
+
         return str ;
     }
 }
