@@ -15,6 +15,7 @@ import java.util.ArrayList;
  * _ calcul du centre
  * _ Creation d'une figure
  * _ Ajout de la figure au centre
+ * _ ajout de la calss cercle
  */
 public class Gui extends JFrame {
 

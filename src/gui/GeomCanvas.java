@@ -1,6 +1,7 @@
 package gui;
 import info301.Point2D ;
 import td1.Polynome;
+import td2.Cercle;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class GeomCanvas extends Canvas {
 
     private ArrayList<Point2D> points ;             //liste de points
     private ArrayList<Polygone> polygones ;         //liste de polygones
+    private ArrayList<Cercle> cercles ;         //liste de polygones
 
     private Color c ;
 
@@ -32,6 +34,9 @@ public class GeomCanvas extends Canvas {
         this.points = new ArrayList<Point2D>();
         //2- initialisation liste des polygones
         this.polygones = new ArrayList<Polygone>() ;
+        //3- ajout des cercle
+        this.cercles = new ArrayList<Cercle>() ;
+
 
         this.c = Color.BLACK ;
     }
@@ -59,8 +64,6 @@ public class GeomCanvas extends Canvas {
         this.polygones.add(poly) ;
 
     }
-
-
 
     /**
      * Dessine une serie de point dans le context graphique
@@ -123,6 +126,7 @@ public class GeomCanvas extends Canvas {
     private void drawPolygone(Polygone poly2draw, Graphics g) {
         ArrayList<Point2D> pts = poly2draw.getPoints() ;
         int nb_pts = pts.size() ;
+        int x1, y1, x2, y2, xi, yi, xf, yf ;
         Point2D pt1, pt2 ;
         Point2D pi = pts.get(0) ;
         Point2D pf = pts.get(nb_pts-1) ;
@@ -133,18 +137,25 @@ public class GeomCanvas extends Canvas {
             for (int i = 1; i < nb_pts; i++) {
                     pt1 = pts.get(i-1) ;
                     pt2 = pts.get(i) ;
-                    g.drawLine(pt1.getX(), pt1.getY(), pt2.getX(), pt2.getY() );
+
+                    //conversion des points en coord dixel
+                    x1 = (int)Math.round(pt1.getX()) ;
+                    y1 = (int)Math.round(pt1.getY()) ;
+                    x2 = (int)Math.round(pt2.getX()) ;
+                    y2 = (int)Math.round(pt2.getY()) ;
+
+                    g.drawLine( x1, y1, x2, y2 );
             }
 
         }
 
         //2- dessine le dernier segment
-        g.drawLine(pi.getX(), pi.getY(), pf.getX(), pf.getY() );
+        xi = (int)Math.round(pi.getX()) ;
+        yi = (int)Math.round(pi.getY()) ;
+        xf = (int)Math.round(pf.getX()) ;
+        yf = (int)Math.round(pf.getY()) ;
 
-    }
-
-
-    private void drawEdges(Graphics g){
+        g.drawLine(xi, yi, xf, yf) ;
 
     }
 
@@ -155,8 +166,8 @@ public class GeomCanvas extends Canvas {
      * @param g
      */
     private void drawPoint(Point2D point2draw, Graphics g) {
-        int xo = point2draw.getX() - 1 ;
-        int yo = point2draw.getY() - 1 ;
+        int xo = (int)Math.round(point2draw.getX() - 1) ;
+        int yo = (int)Math.round(point2draw.getY() - 1) ;
 
         g.fillRect(xo, yo, 3, 3);
     }
