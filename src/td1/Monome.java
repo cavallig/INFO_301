@@ -4,8 +4,8 @@ package td1;
  * Composant de la class Polynome
  */
 public class Monome {
-        public int exposant ;
-        public int coefficiant ;
+        public double exposant ;
+        public double coefficiant ;
 
     /**
      *
@@ -17,20 +17,25 @@ public class Monome {
         this.coefficiant = coefficiant;
     }
 
-    public int getExposant() {
+    public double getExposant() {
         return exposant;
     }
 
-    public void setExposant(int exposant) {
+    public void setExposant(double exposant) {
         this.exposant = exposant;
     }
 
-    public int getCoefficiant() {
+    public double getCoefficiant() {
         return coefficiant;
     }
 
-    public void setCoefficiant(int coefficiant) {
+    public void setCoefficiant(double coefficiant) {
         this.coefficiant = coefficiant;
+    }
+
+
+    public double calcul(double x){
+        return this.coefficiant * (Math.pow(x,this.exposant)) ;
     }
 
     /**
